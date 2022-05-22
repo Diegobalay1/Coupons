@@ -1,4 +1,4 @@
-package com.diego.kotlin.coupons
+package com.diego.kotlin.coupons.common.entities
 
 import androidx.room.Entity
 import androidx.room.Index

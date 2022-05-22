@@ -1,8 +1,9 @@
-package com.diego.kotlin.coupons
+package com.diego.kotlin.coupons.common.dataAccess
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.diego.kotlin.coupons.common.entities.CouponEntity
 
 @Dao
 interface CouponDao {
