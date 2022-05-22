@@ -5,4 +5,7 @@
     <string name="main_text_title">Bienvenido, ingrese su cupón y a continuación presione en consultar.</string>
     <string name="main_hint_coupon">cupón</string>
     <string name="main_hint_description">descripción</string>
+    <string name="error_unique_code">Error desconocido al crear cupón.</string>
+    <string name="error_invalid_length">El cupón debe tener entre 5 y 10 caracteres.</string>
+    <string name="error_unknown">Error desconocido al crear cupón.</string>
 </resources>
