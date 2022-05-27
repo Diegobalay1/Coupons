@@ -12,9 +12,9 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
     private val repository = MainRepository()
 
-    private val result = MutableLiveData<CouponEntity>()
-    fun getResult() = result
-    private val coupon = MutableLiveData<CouponEntity>()
+    /*private val result = MutableLiveData<CouponEntity>()
+    fun getResult() = result*/
+    val coupon = MutableLiveData<CouponEntity>()
 
     private val hideKeyboard = MutableLiveData<Boolean>()
     fun isHideKeyboard() = hideKeyboard

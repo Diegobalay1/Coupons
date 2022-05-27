@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        mainViewModel.getResult().observe(this) { coupon ->
+        /*mainViewModel.getResult().observe(this) { coupon ->
             if (coupon == null) {
                 binding.tilDescription.hint =  getString(R.string.main_hint_description)
                 binding.tilDescription.isEnabled = true
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 binding.tilDescription.isEnabled = false
                 binding.btnCreate.visibility = if (coupon.isActive) View.GONE else View.VISIBLE
             }
-        }
+        }*/
 
         mainViewModel.getSnackbarMsg().observe(this) { msg ->
             Snackbar.make(binding.root, msg, Snackbar.LENGTH_SHORT).show()
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupButtons() {
         binding.btnConsult.setOnClickListener {
-            mainViewModel.consultCouponByCode(binding.etCoupon.text.toString())
+            //mainViewModel.consultCouponByCode(binding.etCoupon.text.toString())
             hideKeyboard(this, binding.root)
         }
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             val coupon = CouponEntity(
                 code = binding.etCoupon.text.toString(),
                 description = binding.etDescription.text.toString())
-            mainViewModel.saveCoupon(coupon)
+            //mainViewModel.saveCoupon(coupon)
             hideKeyboard(this, binding.root)
         }
     }
