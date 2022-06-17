@@ -9,11 +9,14 @@ import com.diego.kotlin.coupons.common.utils.getMsgErrorByCode
 import com.diego.kotlin.coupons.mainModule.model.MainRepository
 import kotlinx.coroutines.launch
 
+/**
+ * Se encarga de comunicar a la vista
+ * con el repositorio y
+ * su correcta administración de datos para livedata
+ */
 class MainViewModel : ViewModel() {
     private val repository = MainRepository()
 
-    /*private val result = MutableLiveData<CouponEntity>()
-    fun getResult() = result*/
     val coupon = MutableLiveData(CouponEntity())
 
     private val hideKeyboard = MutableLiveData<Boolean>()
@@ -22,11 +25,7 @@ class MainViewModel : ViewModel() {
     private val snackbarMsg = MutableLiveData<Int>()
     fun getSnackbarMsg() = snackbarMsg
 
-    /*fun consultCouponByCodeOld(code: String) {
-        viewModelScope.launch {
-            result.value = repository.consultCouponByCode(code)
-        }
-    }*/
+
     fun consultCouponByCode() {
         coupon.value?.code?.let { code ->
             viewModelScope.launch {
@@ -36,17 +35,6 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    /*fun saveCouponOld(couponEntity: CouponEntity){
-        viewModelScope.launch {
-            try {
-                repository.saveCoupon(couponEntity)
-                consultCouponByCode(couponEntity.code)
-                snackbarMsg.value = R.string.main_save_success
-            } catch (e: Exception) {
-                snackbarMsg.value = getMsgErrorByCode(e.message)
-            }
-        }
-    }*/
 
     fun saveCoupon(){
         coupon.value?.let { couponEntity ->
